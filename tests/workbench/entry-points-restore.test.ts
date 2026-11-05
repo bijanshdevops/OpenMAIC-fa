@@ -181,6 +181,7 @@ describe('entry point 2 — the composer attach control', () => {
       'de-DE': 'Attach material',
       'en-US': 'Attach material',
       'es-MX': 'Adjuntar material',
+      'fa-IR': 'پیوست منبع',
       'fr-FR': 'Joindre un support',
       'ja-JP': '教材を添付',
       'ko-KR': '자료 첨부',

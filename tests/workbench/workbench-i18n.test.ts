@@ -58,8 +58,8 @@ describe('workbench translator locales', () => {
 describe('workbench copy covers every supported locale', () => {
   const source = flatten(workbenchEn);
 
-  it('has twelve locales to check', () => {
-    expect(supportedLocales.length).toBe(12);
+  it('has thirteen locales to check', () => {
+    expect(supportedLocales.length).toBe(13);
     expect(source.size).toBeGreaterThanOrEqual(200);
   });
 

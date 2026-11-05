@@ -209,6 +209,11 @@ describe('getVideoExportCoverLabels', () => {
       pblCtaPrompt: 'هل تريد استكشاف التعلم القائم على المشاريع؟',
       ctaVisit: 'تفضل بزيارة',
     },
+    'fa-IR': {
+      quizCtaPrompt: 'می‌خواهید یک آزمون تعاملی را امتحان کنید؟',
+      pblCtaPrompt: 'می‌خواهید یادگیری پروژه‌محور را کشف کنید؟',
+      ctaVisit: 'مشاهده',
+    },
   };
 
   it.each(Object.entries(expectedCtaLabels) as Array<[Locale, (typeof expectedCtaLabels)[Locale]]>)(

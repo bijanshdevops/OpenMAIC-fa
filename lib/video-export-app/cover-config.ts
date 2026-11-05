@@ -3,6 +3,7 @@ import arSA from '@/lib/i18n/locales/ar-SA.json';
 import deDE from '@/lib/i18n/locales/de-DE.json';
 import enUS from '@/lib/i18n/locales/en-US.json';
 import esMX from '@/lib/i18n/locales/es-MX.json';
+import faIR from '@/lib/i18n/locales/fa-IR.json';
 import frFR from '@/lib/i18n/locales/fr-FR.json';
 import jaJP from '@/lib/i18n/locales/ja-JP.json';
 import koKR from '@/lib/i18n/locales/ko-KR.json';
@@ -57,6 +58,7 @@ const LOCALE_RESOURCES: Record<Locale, Record<string, unknown>> = {
   'ru-RU': ruRU,
   'ar-SA': arSA,
   'de-DE': deDE,
+  'fa-IR': faIR,
 };
 
 /**

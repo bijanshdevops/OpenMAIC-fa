@@ -3,6 +3,7 @@ import arSA from '@/lib/i18n/locales/ar-SA.json';
 import deDE from '@/lib/i18n/locales/de-DE.json';
 import enUS from '@/lib/i18n/locales/en-US.json';
 import esMX from '@/lib/i18n/locales/es-MX.json';
+import faIR from '@/lib/i18n/locales/fa-IR.json';
 import frFR from '@/lib/i18n/locales/fr-FR.json';
 import jaJP from '@/lib/i18n/locales/ja-JP.json';
 import koKR from '@/lib/i18n/locales/ko-KR.json';
@@ -17,6 +18,7 @@ const locales = {
   'de-DE': deDE,
   'en-US': enUS,
   'es-MX': esMX,
+  'fa-IR': faIR,
   'fr-FR': frFR,
   'ja-JP': jaJP,
   'ko-KR': koKR,
@@ -60,7 +62,7 @@ const KEYS = [
 const get = (o: any, k: string) => k.split('.').reduce((a, p) => a?.[p], o);
 
 describe('skill settings locale coverage', () => {
-  it('every key exists, is non-empty, and does not echo the key, in all 12 locales', () => {
+  it('every key exists, is non-empty, and does not echo the key, in all 13 locales', () => {
     for (const [code, data] of Object.entries(locales)) {
       for (const k of KEYS) {
         const v = get(data, k);

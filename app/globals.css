@@ -1,12 +1,16 @@
+/* Vazirmatn: a variable Arabic/Persian typeface (Google Fonts), loaded only
+   for RTL locales (see html[dir='rtl'] override below). Latin glyphs in the
+   same family keep numerals and punctuation visually consistent with Farsi
+   text instead of mixing in Inter mid-sentence.
+   Must stay the very first statement in this file (only @charset may precede
+   an @import): Tailwind's own @import below inlines rules ahead of this one
+   otherwise, and "@import rules must precede all rules" becomes a build error. */
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap');
+
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
 
-/* Vazirmatn: a variable Arabic/Persian typeface (Google Fonts), loaded only
-   for RTL locales (see html[dir='rtl'] override below). Latin glyphs in the
-   same family keep numerals and punctuation visually consistent with Farsi
-   text instead of mixing in Inter mid-sentence. */
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap');
 /* Workbench chat (agent workbench surface): scoped .wbchat tokens + prose skin. */
 @import '../components/workbench/chat/workbench-chat.css';
 
@@ -115,8 +119,8 @@
  * whiteboard renderer, which positions elements by absolute x/y coordinates
  * chosen at generation time and is out of scope for a CSS-level change. */
 html[dir='rtl'] {
-  --font-sans: 'Vazirmatn Variable', 'Vazirmatn', 'Inter Variable', ui-sans-serif, system-ui,
-    sans-serif;
+  --font-sans:
+    'Vazirmatn Variable', 'Vazirmatn', 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
 }
 
 html[dir='rtl'] body {
