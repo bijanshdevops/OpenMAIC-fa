@@ -1,0 +1,40 @@
+# Public demo of OpenMAIC-fa (maic.greenlanco.ir), behind the website's nginx and closed with an
+# access code. The language model is OpenRouter; its key stays in demo/demo.env on the server.
+# See demo/README.md.
+#
+#   cp demo/demo.env.example demo/demo.env && nano demo/demo.env
+#   docker compose -p openmaic-demo -f demo/compose.demo.yml --env-file demo/demo.env up -d --build
+#
+# The app joins the website's network (SITE_NETWORK) as openmaic-demo-app, where the website's
+# nginx sends maic.greenlanco.ir; it is also on 127.0.0.1:DEMO_PORT for checks.
+
+services:
+  app:
+    build:
+      context: ..
+    image: openmaic-fa-demo:latest
+    restart: unless-stopped
+    env_file:
+      - demo.env
+    environment:
+      # nginx in front sets X-Forwarded-For from the visitor's address
+      TRUST_PROXY_HEADERS: 'true'
+      # refuse to start the public demo without a key and an access code
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:?set OPENROUTER_API_KEY in demo/demo.env}
+      ACCESS_CODE: ${ACCESS_CODE:?set ACCESS_CODE in demo/demo.env}
+    volumes:
+      - data:/app/data
+    ports:
+      - '127.0.0.1:${DEMO_PORT:-3500}:3000'
+    networks:
+      default:
+      site:
+        aliases: [openmaic-demo-app]
+
+volumes:
+  data:
+
+networks:
+  site:
+    name: ${SITE_NETWORK:-greenlanco_internal}
+    external: true
